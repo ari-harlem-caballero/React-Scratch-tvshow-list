@@ -22,7 +22,11 @@ function App() {
   }
 
   function handleDeleteShow(id) {
+    const index = allShows.findIndex(tvshow => tvshow.id === id);
 
+    allShows.splice(index, 1);
+
+    setAllShows([...allShows]);
   }
 
   function submitShow(e) {
@@ -69,12 +73,14 @@ function App() {
       </section>
       <section className='bottom'>
         {/* filter, list */}
-        <div>
+        <div className='filter-tv-shows'>
         Filter Tv Shows: 
           <input onChange={(e) => handleFilterShows(e.target.value)} />
         </div>
-        {/* <TVShowList
-          tvshows={} /> */}
+        <TVShowList
+          tvshows={filteredShows.length ? filteredShows : allShows} 
+          handleDeleteShow={handleDeleteShow}  
+        />
       </section>
     </div>
   );
