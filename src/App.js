@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import TVShow from './TVShows/TVShow';
 import TVShowForm from './TVShows/TVShowForm';
 import TVShowList from './TVShows/TVShowList';
@@ -12,14 +12,16 @@ function App() {
   const [showFormSeasons, setShowFormSeasons] = useState(1);
   const [showFormCreator, setShowFormCreator] = useState('');
   const [showFormColor, setShowFormColor] = useState('yellow');
+  const [query, setQuery] = useState('');
 
   // functions: filter, delete, submit(new)
-  function handleFilterShows(search) {
-    const filterShows = allShows.filter(tvshow => tvshow.title.includes(search));
+  function handleFilterShows() {
+    const filterShows = allShows.filter((tvshow) => tvshow.title.includes(query));
 
-    search ? setFilteredShows(filterShows)
-      : setFilteredShows(allShows);
+    setFilteredShows(filterShows);
   }
+
+  useEffect(handleFilterShows, [query, allShows]);
 
   function handleDeleteShow(id) {
     const index = allShows.findIndex(tvshow => tvshow.id === id);
@@ -75,10 +77,12 @@ function App() {
         {/* filter, list */}
         <div className='filter-tv-shows'>
         Filter Tv Shows: 
-          <input onChange={(e) => handleFilterShows(e.target.value)} />
+          <input onChange={(e) => setQuery(e.target.value)} />
         </div>
         <TVShowList
-          tvshows={filteredShows.length ? filteredShows : allShows} 
+          tvshows={filteredShows.length 
+            ? filteredShows 
+            : allShows} 
           handleDeleteShow={handleDeleteShow}  
         />
       </section>
