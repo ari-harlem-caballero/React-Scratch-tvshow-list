@@ -42,6 +42,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1>Create a TV Show</h1>
       <section className='top'>
         <TVShowForm
           submitShow={submitShow}
@@ -61,7 +62,6 @@ function App() {
           creator: showFormCreator,
           color: showFormColor
         }} />
-        Hello world
       </section>
       <section className='bottom'>
         {/* filter, list */}

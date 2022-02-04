@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function TVShowForm(props) {
-  return <div className='tv-show-form-hold'>
+  return <div className='left'>
     <form className='tv-show-form' onSubmit={props.submitTVShow}>
       <label>
           Title:
