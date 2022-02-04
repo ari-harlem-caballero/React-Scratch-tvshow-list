@@ -1,5 +1,6 @@
 import './App.css';
 import { useState } from 'react';
+import TVShow from './TVShows/TVShow';
 
 function App() {
   // state: allShows, filteredShows, showTitle, showSeasons, showCreator, showColor, *showActors[]*
@@ -42,6 +43,12 @@ function App() {
     <div className="App">
       <section className='top'>
         {/* form, current show */}
+        <TVShow tvshow={{
+          title: showFormTitle,
+          seasons: showFormSeasons,
+          creator: showFormCreator,
+          color: showFormColor
+        }} />
         Hello world
       </section>
       <section className='bottom'>
