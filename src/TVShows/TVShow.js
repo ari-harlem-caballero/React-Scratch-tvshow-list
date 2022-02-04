@@ -11,7 +11,7 @@ export default function TVShow(props) {
       <p>Seasons: {props.tvshow.seasons}</p>
       <p>Creator: {props.tvshow.creator}</p>
       <div>
-        <ActorsList actor={actor} />
+        <ActorsList actors={props.tvshow.actors} />
       </div>
     </div>
   );

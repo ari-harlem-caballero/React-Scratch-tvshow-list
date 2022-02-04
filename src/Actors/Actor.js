@@ -1,7 +1,7 @@
 import React from 'react';
 
-export default function Actor(props) {
+export default function Actor({ name }) {
   return <div className='actor'>
-    <p>{props.tvshow.actor}</p>
+    <p>Actors: {name}</p>
   </div>;
 }

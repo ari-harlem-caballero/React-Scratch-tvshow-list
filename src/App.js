@@ -11,6 +11,7 @@ function App() {
   const [showFormTitle, setShowFormTitle] = useState('');
   const [showFormSeasons, setShowFormSeasons] = useState(1);
   const [showFormCreator, setShowFormCreator] = useState('');
+  const [showFormActors, setShowFormActors] = useState('');
   const [showFormColor, setShowFormColor] = useState('gold');
   const [query, setQuery] = useState('');
 
@@ -41,6 +42,7 @@ function App() {
       title: showFormTitle,
       seasons: showFormSeasons,
       creator: showFormCreator,
+      actors: showFormActors,
       color: showFormColor
     };
     // update array/add new, clear state
@@ -49,6 +51,7 @@ function App() {
     setShowFormTitle('');
     setShowFormSeasons('1');
     setShowFormCreator('');
+    setShowFormActors('');
     setShowFormColor('gold');
   }
 
@@ -64,6 +67,8 @@ function App() {
           setShowFormSeasons={setShowFormSeasons}
           showFormCreator={showFormCreator}
           setShowFormCreator={setShowFormCreator}
+          showFormActors={showFormActors} 
+          setShowFormActors={setShowFormActors}
           showFormColor={showFormColor}
           setShowFormColor={setShowFormColor}
         />
@@ -72,6 +77,7 @@ function App() {
           title: showFormTitle,
           seasons: showFormSeasons,
           creator: showFormCreator,
+          actors: showFormActors,
           color: showFormColor
         }} />
       </section>

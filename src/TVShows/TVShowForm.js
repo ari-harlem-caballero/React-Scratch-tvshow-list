@@ -34,6 +34,15 @@ export default function TVShowForm(props) {
           />
         </label>
         <label>
+          Actors:
+          <input 
+            required 
+            value={props.showFormActors} 
+            onChange={(e) => 
+              props.setShowFormActors(e.target.value)} 
+          />
+        </label>
+        <label>
           Color:
           <select 
             required 
