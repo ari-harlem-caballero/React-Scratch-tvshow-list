@@ -2,6 +2,7 @@ import './App.css';
 import { useState } from 'react';
 import TVShow from './TVShows/TVShow';
 import TVShowForm from './TVShows/TVShowForm';
+import TVShowList from './TVShows/TVShowList';
 
 function App() {
   // state: allShows, filteredShows, showTitle, showSeasons, showCreator, showColor, *showActors[]*
@@ -14,7 +15,10 @@ function App() {
 
   // functions: filter, delete, submit(new)
   function handleFilterShows(search) {
+    const filterShows = allShows.filter(tvshow => tvshow.title.includes(search));
 
+    search ? setFilteredShows(filterShows)
+      : setFilteredShows(allShows);
   }
 
   function handleDeleteShow(id) {
@@ -65,6 +69,12 @@ function App() {
       </section>
       <section className='bottom'>
         {/* filter, list */}
+        <div>
+        Filter Tv Shows: 
+          <input onChange={(e) => handleFilterShows(e.target.value)} />
+        </div>
+        {/* <TVShowList
+          tvshows={} /> */}
       </section>
     </div>
   );
