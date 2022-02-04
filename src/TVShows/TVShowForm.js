@@ -41,11 +41,11 @@ export default function TVShowForm(props) {
             onChange={(e) => 
               props.setShowFormColor(e.target.value)}
           >
-            <option value="yellow">Yellow</option>
-            <option value="red">Red</option>
+            <option value="gold">Yellow</option>
+            <option value="tomato">Red</option>
             <option value="lightblue">Blue</option>
-            <option value="lightseagreen">Green</option>
-            <option value="yellowgreen">Bright</option>
+            <option value="lightseagreen">Seafoam</option>
+            <option value="yellowgreen">Green</option>
           </select>
         </label>
         <button>Add Movie</button>

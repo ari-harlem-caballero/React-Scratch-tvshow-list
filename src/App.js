@@ -11,12 +11,13 @@ function App() {
   const [showFormTitle, setShowFormTitle] = useState('');
   const [showFormSeasons, setShowFormSeasons] = useState(1);
   const [showFormCreator, setShowFormCreator] = useState('');
-  const [showFormColor, setShowFormColor] = useState('yellow');
+  const [showFormColor, setShowFormColor] = useState('gold');
   const [query, setQuery] = useState('');
 
   // functions: filter, delete, submit(new)
   function handleFilterShows() {
-    const filterShows = allShows.filter((tvshow) => tvshow.title.includes(query));
+    const filterShows = allShows.filter((tvshow) => 
+      tvshow.title.includes(query));
 
     setFilteredShows(filterShows);
   }
@@ -24,7 +25,8 @@ function App() {
   useEffect(handleFilterShows, [query, allShows]);
 
   function handleDeleteShow(id) {
-    const index = allShows.findIndex(tvshow => tvshow.id === id);
+    const index = allShows.findIndex(tvshow => 
+      tvshow.id === id);
 
     allShows.splice(index, 1);
 
@@ -47,7 +49,7 @@ function App() {
     setShowFormTitle('');
     setShowFormSeasons('1');
     setShowFormCreator('');
-    setShowFormColor('yellow');
+    setShowFormColor('gold');
   }
 
   return (
