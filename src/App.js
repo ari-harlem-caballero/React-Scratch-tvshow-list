@@ -1,6 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 import TVShow from './TVShows/TVShow';
+import TVShowForm from './TVShows/TVShowForm';
 
 function App() {
   // state: allShows, filteredShows, showTitle, showSeasons, showCreator, showColor, *showActors[]*
@@ -42,6 +43,17 @@ function App() {
   return (
     <div className="App">
       <section className='top'>
+        <TVShowForm
+          submitShow={submitShow}
+          showFormTitle={showFormTitle}
+          setShowFormTitle={setShowFormTitle}
+          showFormSeasons={showFormSeasons}
+          setShowFormSeasons={setShowFormSeasons}
+          showFormCreator={showFormCreator}
+          setShowFormCreator={setShowFormCreator}
+          showFormColor={showFormColor}
+          setShowFormColor={setShowFormColor}
+        />
         {/* form, current show */}
         <TVShow tvshow={{
           title: showFormTitle,
