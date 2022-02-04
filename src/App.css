@@ -1,38 +1,70 @@
+body, html, #root, .App {
+  height: 100%;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: rgba(95, 179, 204, 0.178);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+  margin: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left {
+  width: 40%;
+  margin: 10px;
+}
+
+.tv-show-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.tv-show-form input, select {
+  margin: 5px;
+  width: 130px;
+  border-radius: 6px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  margin-top: 5px;
+  border-radius: 6px;
+}
+
+.tv-show {
+  width: 150px;
+  border-radius: 20px;
+  margin: 10px;
+}
+
+.bottom {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter-tv-shows input {
+  margin-left: 7px;
+}
+
+.tv-show-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
 }
